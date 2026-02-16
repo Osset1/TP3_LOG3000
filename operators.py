@@ -21,7 +21,7 @@ def subtract(a,b):
         int: la différence.
     """
     # BUG: on soustrait a de b et non b de a
-    return b - a
+    return a - b
 
 def multiply(a,b):
     """Multiplie deux nombres.
