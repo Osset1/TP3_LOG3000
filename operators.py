@@ -33,7 +33,7 @@ def multiply(a,b):
     Returns:
         int: la multiplication.
     """
-    # BUG: ici on ne fait pas a * b, soit la multiplication, on fait a^b donc une addition.
+    # BUG: ici on ne fait pas a * b, soit la multiplication, on fait a^b donc un exposant.
     return a ** b
 
 def divide(a,b):
