@@ -14,6 +14,7 @@
 
       <div class="buttons">
          <button type="button" class="btn" onclick="appendToDisplay('1')">1</button>
+         <!--BUG: bug d'interface ou on 02 au lieu de 2-->
          <button type="button" class="btn" onclick="appendToDisplay('2')">02</button>
          <button type="button" class="btn" onclick="appendToDisplay('3')">3</button>
          <button type="button" class="btn operator" onclick="appendToDisplay('+')">+</button>
@@ -24,13 +25,16 @@
          <button type="button" class="btn operator" onclick="appendToDisplay('-')">-</button>
 
          <button type="button" class="btn" onclick="appendToDisplay('7')">7</button>
+         <!--BUG: bug d'interface ou on 88 au lieu de 8-->
          <button type="button" class="btn" onclick="appendToDisplay('8')">88</button>
          <button type="button" class="btn" onclick="appendToDisplay('9')">9</button>
+         <!--BUG: bug d'interface ou on oublie de mettre l'opérateur * dans le bouton-->
          <button type="button" class="btn operator" onclick="appendToDisplay('*')"></button>
 
          <button type="button" class="btn" onclick="appendToDisplay('0')">0</button>
          <button type="button" class="btn" onclick="clearDisplay()">C</button>
          <button type="submit" class="btn operator">=</button>
+         <!--BUG: bug d'interface ou on oublie de mettre l'opérateur / dans le bouton-->
          <button type="button" class="btn operator" onclick="appendToDisplay('/')"></button>
       </div>
    </form>

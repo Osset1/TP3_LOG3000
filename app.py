@@ -11,6 +11,14 @@ OPS = {
 }
 
 def calculate(expr: str):
+    """
+    TODO
+    Docstring pour calculate
+    
+    :param expr: Description
+    :type expr: str
+    """
+    
     if not expr or not isinstance(expr, str):
         raise ValueError("empty expression")
 
@@ -41,8 +49,13 @@ def calculate(expr: str):
 
     return OPS[op_char](a, b)
 
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    """
+    TODO
+    Docstring pour index
+    """
     result = ""
     if request.method == 'POST':
         expression = request.form.get('display', '')

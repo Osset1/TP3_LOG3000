@@ -24,6 +24,7 @@ h1 {
    font-size: 36px;
 }
 
+/* BUG: bug d'interface ou le display box est pas correctement centré */
 #display {
    width: 100%;
    height: 80px;
