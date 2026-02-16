@@ -34,7 +34,7 @@ def multiply(a,b):
         int: la multiplication.
     """
     # BUG: ici on ne fait pas a * b, soit la multiplication, on fait a^b donc un exposant.
-    return a ** b
+    return a * b
 
 def divide(a,b):
     """Divise deux nombres.
