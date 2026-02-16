@@ -1,46 +1,102 @@
-# App calcultatrice - Devoir 3 LOG3000
+# Application Calculatrice Web – Devoir 3 LOG3000
 
-Équipe no 30
+**Équipe n° 30**
 
-## Objectif
+---
 
+## Objectifs
 
-## Prérequis d’installation
+Ce projet est une application web de calculatrice permettant d'effectuer des opérations arithmétiques simples, développée avec le framework Flask en Python.
 
-info à arranger?
-Prérequis
-Avant de commencer, assurez-vous d’avoir :
-• Un compte GitHub.
-• Git installé localement.
-• Python et pip installés.
+L'objectif principal est de structurer, documenter et tester une base de code existante, initialement peu documentée et contenant des bogues.
 
-il faut flask
+---
 
-## Instructions d’installation
-dans le terminal:
+## Prérequis
 
+Avant de démarrer, assurez-vous d'avoir installé sur votre machine :
 
+- **Git**
+- **Python 3**
+- **pip** (gestionnaire de paquets Python)
+
+---
+
+## Installation
+
+### 1. Cloner le dépôt
+
+```bash
+git clone https://github.com/Osset1/TP3_LOG3000
+cd TP3_LOG3000
+```
+
+### 2. Créer et activer un environnement virtuel
+
+**Création de l'environnement :**
+```bash
+python -m venv .venv
+```
+
+**Activation :**
+
+- **MacOS et Linux :**
+  ```bash
+  source .venv/bin/activate
+  ```
+
+- **Windows :**
+  ```bash
+  .venv\Scripts\activate
+  ```
+
+### 3. Installer les dépendances
+
+```bash
 pip install flask
-python app.py
+```
 
-inclure aussi cette info:
-▪ Une description complète du but et de la portée du projet.
-▪ Un guide d’installation clair (étape par étape).
-▪ Des instructions d’utilisation détaillées (comment lancer l’app, comment
-utiliser ses fonctionnalités).
-▪ Une section sur les tests (comment exécuter les tests que vous ajouterez plus
-tard).
-▪ Une section sur le flux de contribution (branches, PR, issues).
+### 4. Lancer l'application
 
-il faut avoir python 3 installé
-il faut savoir démarrer un environnement virtuel
-
-sous unix:
-python3 -m venv env
-source env/bin/activate
-pip install flask
+```bash
 python3 app.py
+```
 
-1. démarrer un environnement virtuel
-2. pip install flask
-3. python3 app.py   
+### 5. Accéder à l'application
+
+Ouvrez votre navigateur et accédez à l'adresse suivante :
+```
+http://127.0.0.1:5000
+```
+
+---
+
+## Exécution des tests
+
+Depuis le répertoire racine du projet :
+
+```bash
+cd tests
+python -m unittest discover
+```
+
+---
+
+## Contribution
+
+### Structure des branches
+
+- **main** : branche stable contenant le code en production
+- **Branches de fonctionnalités :** `documentation/nom-feature-documentée`
+- **Branches de correctifs :** `bugfix/nom-bug`
+
+### Issues
+
+- Toute anomalie ou amélioration doit être documentée via une **issue GitHub**
+- Chaque issue doit décrire clairement le problème, fournir les étapes de reproduction ou les cas de test en échec, et être assignée à un membre de l'équipe
+
+### Pull Requests
+
+- Chaque branche de modification doit posséder une **pull request**
+- Chaque pull request doit être liée à une issue existante
+- Une **revue de code** doit être effectuée avant la fusion d'une branche
