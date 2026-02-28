@@ -47,4 +47,4 @@ def divide(a,b):
         int: le quotient.
     """
     # BUG: ici on fait la division entière entre les nombres et non la division décimale
-    return a // b
+    return a / b
