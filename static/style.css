@@ -36,6 +36,11 @@ h1 {
    border: none;
    background-color: #222;
    color: #fff;
+
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;
+   box-sizing: border-box;
 }
 
 .buttons {
