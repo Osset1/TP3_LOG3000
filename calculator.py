@@ -1,7 +1,4 @@
-﻿from flask import Flask, request, render_template
 from operators import add, subtract, multiply, divide
-
-app = Flask(__name__)
 
 OPS = {
     '+': add,
@@ -13,7 +10,7 @@ OPS = {
 
 
 def calculate(expr: str):
-    """Evaluate a simple arithmetic expression with two operands and one operator."""
+    """Evaluate a simple arithmetic expression with one binary operator."""
     if not expr or not isinstance(expr, str):
         raise ValueError("empty expression")
 
@@ -24,7 +21,6 @@ def calculate(expr: str):
     op_char = None
     i = 0
 
-    # Find one binary operator and allow unary + / - signs for operands.
     while i < len(s):
         if s[i] == '*' and i + 1 < len(s) and s[i + 1] == '*':
             if i == 0 or s[i - 1] in "+-*/":
@@ -56,24 +52,7 @@ def calculate(expr: str):
     try:
         a = float(left)
         b = float(right)
-    except ValueError:
-        raise ValueError("operands must be numbers")
+    except ValueError as exc:
+        raise ValueError("operands must be numbers") from exc
 
     return OPS[op_char](a, b)
-
-
-@app.route('/', methods=['GET', 'POST'])
-def index():
-    """Main route: show form and evaluate submitted expression."""
-    result = ""
-    if request.method == 'POST':
-        expression = request.form.get('display', '')
-        try:
-            result = calculate(expression)
-        except Exception as e:
-            result = f"Error: {e}"
-    return render_template('index.html', result=result)
-
-
-if __name__ == '__main__':
-    app.run(debug=True)
