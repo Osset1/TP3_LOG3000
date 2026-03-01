@@ -9,6 +9,28 @@ OPS = {
 }
 
 
+def _parse_signed_number(token: str) -> float:
+    """Parse numbers with repeated unary +/- signs, e.g. --2, ---2, +--2."""
+    if not token:
+        raise ValueError("operands must be numbers")
+
+    sign = 1
+    i = 0
+    while i < len(token) and token[i] in "+-":
+        if token[i] == "-":
+            sign *= -1
+        i += 1
+
+    core = token[i:]
+    if not core:
+        raise ValueError("operands must be numbers")
+
+    try:
+        return sign * float(core)
+    except ValueError as exc:
+        raise ValueError("operands must be numbers") from exc
+
+
 def calculate(expr: str):
     """Evaluate a simple arithmetic expression with one binary operator."""
     if not expr or not isinstance(expr, str):
@@ -43,16 +65,16 @@ def calculate(expr: str):
                 op_char = s[i]
         i += 1
 
+    if op_pos == -1:
+        return _parse_signed_number(s)
+
     if op_pos <= 0 or op_pos >= len(s) - op_len:
         raise ValueError("invalid expression format")
 
     left = s[:op_pos]
     right = s[op_pos + op_len:]
 
-    try:
-        a = float(left)
-        b = float(right)
-    except ValueError as exc:
-        raise ValueError("operands must be numbers") from exc
+    a = _parse_signed_number(left)
+    b = _parse_signed_number(right)
 
     return OPS[op_char](a, b)
