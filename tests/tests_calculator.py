@@ -7,6 +7,15 @@ from calculator import calculate
 
 
 class TestCalculatorExpressions(unittest.TestCase):
+    def test_double_negative_number(self):
+        self.assertEqual(calculate("--2"), 2)
+
+    def test_triple_negative_number(self):
+        self.assertEqual(calculate("---2"), -2)
+
+    def test_plus_with_double_negative(self):
+        self.assertEqual(calculate("5+--2"), 7)
+
     def test_minus_minus(self):
         self.assertEqual(calculate("8--8"), 16)
 
